@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madeira — Roteiro CR7</title>
+<style>
+:root{--ink:#152a2a;--paper:#fffaf0;--red:#e84c3d;--green:#27866b;--blue:#348bb3;--purple:#8058a6;--gold:#f4bd4f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:28px 20px 22px;background:linear-gradient(125deg,#123e3a,#1d6d59);color:white;text-align:center}
+.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#f4bd4f}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1;margin:10px 0}header p{max-width:650px;margin:12px auto 0;color:#e4f3eb;line-height:1.5}
+main{max-width:1100px;margin:0 auto;padding:20px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.85fr);gap:20px}
+.panel{background:white;border:1px solid #e8e2d5;border-radius:22px;overflow:hidden;box-shadow:0 8px 25px #153e3510}
+.panel-title{padding:17px 20px 8px;font-weight:850;font-size:1.05rem}
+.map-wrap{padding:0 12px 14px;background:#eaf5ed}
+svg{width:100%;height:auto;display:block;max-height:570px}
+.pin{cursor:pointer;outline:none}.pin circle{stroke:white;stroke-width:3;filter:drop-shadow(0 3px 2px #1234);transition:transform .15s}.pin:hover circle,.pin:focus circle{stroke:#152a2a;stroke-width:4}.pin text{font-size:12px;font-weight:900;fill:white;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.map-note{padding:0 18px 17px;font-size:.82rem;color:#55716a;line-height:1.4}
+.day-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:12px 16px}
+.tab{border:0;border-radius:12px;padding:11px 6px;font-weight:800;cursor:pointer;background:#f0eee7;color:#324541}
+.tab[aria-selected="true"]{background:var(--active);color:white}
+.detail{padding:4px 20px 22px}.tag{display:inline-block;background:#f4f0e5;border-radius:99px;padding:6px 10px;font-size:.75rem;font-weight:800;letter-spacing:.04em}
+h2{font-size:1.65rem;line-height:1.1;margin:12px 0 8px}.intro{line-height:1.55;color:#51645f;margin:0 0 15px}
+.stop{border-top:1px solid #eee8dd;padding:13px 0;display:grid;grid-template-columns:34px 1fr;gap:10px}
+.stop-num{width:30px;height:30px;border-radius:10px;background:var(--active);color:white;display:grid;place-items:center;font-weight:900}
+.stop h3{margin:0 0 4px;font-size:1rem}.stop p{margin:0 0 8px;color:#596b66;font-size:.9rem;line-height:1.45}
+a{color:#176b58;font-weight:800;text-decoration:none}a:hover{text-decoration:underline}
+.map-link{display:inline-block;border-radius:9px;background:#edf6f0;padding:8px 10px;font-size:.83rem}
+footer{text-align:center;padding:8px 20px 30px;color:#60716c;font-size:.8rem;line-height:1.5}
+@media(max-width:760px){main{grid-template-columns:1fr;padding:12px}.map-wrap{padding:0 6px 10px}.day-tabs{padding:10px}.tab{font-size:.83rem}header{padding-top:24px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Ilha da Madeira · Roteiro interativo</div>
+  <h1>Vens pelo CR7.<br>Ficas pela ilha.</h1>
+  <p>Quatro dias para descobrir onde tudo começou — e explorar montanhas, mar, sabores e cultura da Madeira.</p>
+</header>
+<main>
+<section class="panel">
+  <div class="panel-title">Explora o mapa <span style="font-weight:500;color:#70817b">· toca nos números</span></div>
+  <div class="map-wrap">
+  <svg viewBox="0 0 600 520" role="img" aria-label="Mapa ilustrado da ilha da Madeira com pontos turísticos">
+    <defs>
+      <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff0e8"/><stop offset="1" stop-color="#b7dfd4"/></linearGradient>
+      <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5cae78"/><stop offset=".5" stop-color="#3f8e68"/><stop offset="1" stop-color="#23664f"/></linearGradient>
+      <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" fill="#ffffff" opacity=".22"/></pattern>
+    </defs>
+    <rect width="600" height="520" rx="18" fill="url(#sea)"/>
+    <g fill="none" stroke="#fff" stroke-width="2" opacity=".55">
+      <path d="M0 80 Q120 45 240 90 T600 70"/><path d="M0 130 Q140 105 270 145 T600 120"/>
+      <path d="M0 420 Q150 390 300 430 T600 410"/><path d="M0 465 Q150 435 300 475 T600 450"/>
+    </g>
+    <g opacity=".45" fill="#fff"><path d="M60 220q35-16 70 0t70 0t70 0"/><path d="M340 100q35-16 70 0t70 0"/></g>
+    <!-- Stylized island silhouette: illustrative, not a navigational boundary -->
+    <path d="M76 275 L101 252 L120 255 L136 229 L158 236 L177 210 L202 219 L222 194 L247 204 L267 180 L290 191 L310 171 L336 183 L356 170 L379 190 L405 184 L427 207 L452 204 L467 224 L493 228 L507 251 L491 268 L468 275 L451 297 L424 294 L408 317 L380 310 L360 332 L334 319 L313 340 L289 326 L265 342 L244 322 L218 333 L200 312 L175 320 L158 299 L134 306 L117 287 L92 294 Z" fill="url(#land)" stroke="#1d654d" stroke-width="3"/>
+    <path d="M76 275 L101 252 L120 255 L136 229 L158 236 L177 210 L202 219 L222 194 L247 204 L267 180 L290 191 L310 171 L336 183 L356 170 L379 190 L405 184 L427 207 L452 204 L467 224 L493 228 L507 251 L491 268 L468 275 L451 297 L424 294 L408 317 L380 310 L360 332 L334 319 L313 340 L289 326 L265 342 L244 322 L218 333 L200 312 L175 320 L158 299 L134 306 L117 287 L92 294 Z" fill="url(#dots)"/>
+    <!-- Mountain ridges -->
+    <g fill="none" stroke="#c8e2a5" stroke-width="4" stroke-linecap="round" opacity=".85">
+      <path d="M170 270 L220 222 L248 251 L291 202 L326 241 L358 211 L395 253"/>
+      <path d="M211 291 L265 254 L303 280 L347 244 L388 279"/>
+    </g>
+    <g fill="#e6f2d0" opacity=".9"><path d="M211 222l9-13 10 13z"/><path d="M282 209l9-13 10 13z"/><path d="M350 218l8-12 9 12z"/></g>
+    <g fill="#fff" font-size="13" font-weight="800" opacity=".95">
+      <text x="226" y="302">SERRA</text><text x="226" y="317">CENTRAL</text>
+      <text x="104" y="270" font-size="11">OESTE</text><text x="424" y="252" font-size="11">LESTE</text>
+    </g>
+    <!-- decorative coast village -->
+    <g transform="translate(155 278)"><path d="M-10 10v-12l10-8 10 8v12z" fill="#fff0cf" stroke="#a35a3b" stroke-width="2"/><path d="M-13-2L0-13 13-2" fill="none" stroke="#d85a40" stroke-width="4"/><rect x="-3" y="1" width="6" height="9" fill="#a35a3b"/></g>
+    <g transform="translate(447 281)"><path d="M-10 10v-12l10-8 10 8v12z" fill="#fff0cf" stroke="#a35a3b" stroke-width="2"/><path d="M-13-2L0-13 13-2" fill="none" stroke="#d85a40" stroke-width="4"/></g>
+    <!-- clickable pins -->
+    <g class="pin" tabindex="0" role="button" aria-label="Dia 1: Funchal e Museu CR7" data-day="0" transform="translate(175 309)"><circle r="17" fill="#e84c3d"/><text y="1">1</text></g>
+    <g class="pin" tabindex="0" role="button" aria-label="Dia 2: Pico do Arieiro" data-day="1" transform="translate(310 220)"><circle r="17" fill="#27866b"/><text y="1">2</text></g>
+    <g class="pin" tabindex="0" role="button" aria-label="Dia 3: Porto Moniz" data-day="2" transform="translate(104 252)"><circle r="17" fill="#348bb3"/><text y="1">3</text></g>
+    <g class="pin" tabindex="0" role="button" aria-label="Dia 4: Santana" data-day="3" transform="translate(423 220)"><circle r="17" fill="#8058a6"/><text y="1">4</text></g>
+    <g transform="translate(430 375)">
+      <rect width="135" height="90" rx="14" fill="#fffaf0" stroke="#d8e6d9"/>
+      <text x="13" y="23" font-size="11" font-weight="900" fill="#1d6d59">ROTEIRO</text>
+      <text x="13" y="45" font-size="15" font-weight="900" fill="#152a2a">4 dias</text>
+      <text x="13" y="64" font-size="10" fill="#526c62">Mar · serra · cultura</text>
+      <text x="13" y="78" font-size="10" fill="#526c62">e sabores locais</text>
+    </g>
+    <text x="24" y="490" fill="#426d61" font-size="11" font-weight="800">MAPA ILUSTRADO · NÃO À ESCALA</text>
+  </svg>
+  </div>
+  <div class="map-note">Seleciona um número no mapa ou um dia abaixo para veres as paragens e abrires cada local no Google Maps.</div>
+</section>
+<section class="panel" aria-live="polite">
+  <div class="day-tabs" role="tablist" aria-label="Escolher dia">
+    <button class="tab" style="--active:#e84c3d" aria-selected="true" data-tab="0">Dia 1</button>
+    <button class="tab" style="--active:#27866b" aria-selected="false" data-tab="1">Dia 2</button>
+    <button class="tab" style="--active:#348bb3" aria-selected="false" data-tab="2">Dia 3</button>
+    <button class="tab" style="--active:#8058a6" aria-selected="false" data-tab="3">Dia 4</button>
+  </div>
+  <div class="detail" id="detail"></div>
+</section>
+</main>
+<footer>Projeto conceptual para cartaz turístico. Confirma horários, condições meteorológicas e acessos antes da visita. Os percursos e a forma da ilha são ilustrativos; usa os links de navegação para planear deslocações reais.</footer>
+<script>
+const days = [
+ {color:"#e84c3d",tag:"FUNCHAL · A ORIGEM",title:"Dia 1 — A ilha de CR7",intro:"Começa no Funchal, a cidade onde Cristiano Ronaldo cresceu, e explora o centro histórico à beira-mar.",stops:[
+  ["Museu CR7","Conhece troféus, camisolas e momentos marcantes da carreira de Ronaldo.","Museu CR7, Funchal, Madeira"],
+  ["Zona Velha do Funchal","Passeia pelas ruas históricas, portas pintadas e restaurantes locais.","Zona Velha do Funchal, Madeira"],
+  ["Marina do Funchal","Termina o dia junto ao mar, com cafés e vistas para a baía.","Marina do Funchal, Madeira"]]},
+ {color:"#27866b",tag:"MONTANHAS · NATUREZA",title:"Dia 2 — Acima das nuvens",intro:"Descobre a paisagem montanhosa da Madeira. Verifica sempre o tempo e o estado dos trilhos antes de sair.",stops:[
+  ["Pico do Arieiro","Um dos miradouros de montanha mais conhecidos da ilha; a visibilidade depende do tempo.","Pico do Arieiro, Madeira"],
+  ["Ribeiro Frio","Zona verde conhecida pela floresta e pelos percursos pedestres próximos.","Ribeiro Frio, Madeira"],
+  ["Miradouro do Guindaste","Varanda sobre a costa norte, com vistas amplas para o Atlântico.","Miradouro do Guindaste, Faial, Madeira"]]},
+ {color:"#348bb3",tag:"COSTA NORTE · OCEANO",title:"Dia 3 — A força do Atlântico",intro:"Segue pela costa norte para ver falésias, aldeias e as famosas piscinas naturais.",stops:[
+  ["Porto Moniz","As piscinas naturais vulcânicas são um dos destaques da costa norte; confirma condições e abertura.","Piscinas Naturais de Porto Moniz, Madeira"],
+  ["Seixal","Praia de areia escura e paisagem verde junto ao mar.","Praia do Seixal, Madeira"],
+  ["Véu da Noiva","Miradouro conhecido pela cascata que cai na encosta junto ao oceano.","Miradouro do Véu da Noiva, Madeira"]]},
+ {color:"#8058a6",tag:"TRADIÇÃO · SABORES",title:"Dia 4 — Madeira autêntica",intro:"Termina o roteiro entre casas tradicionais, miradouros e sabores típicos madeirenses.",stops:[
+  ["Casas típicas de Santana","Descobre as casas tradicionais de telhado de colmo e a identidade local.","Casas Típicas de Santana, Madeira"],
+  ["Miradouro da Ponta do Rosto","Paisagem dramática sobre as falésias da península de São Lourenço.","Miradouro da Ponta do Rosto, Madeira"],
+  ["Provar a gastronomia local","Experimenta especialidades madeirenses num restaurante local.","restaurante comida tradicional madeirense Santana Madeira"]]}
+];
+const detail=document.getElementById('detail');
+function render(i){
+ const d=days[i];
+ document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(Number(b.dataset.tab)===i)));
+ document.querySelectorAll('.pin').forEach(p=>p.style.opacity=Number(p.dataset.day)===i?'1':'.72');
+ detail.style.setProperty('--active',d.color);
+ detail.innerHTML=`<span class="tag">${d.tag}</span><h2>${d.title}</h2><p class="intro">${d.intro}</p>`+
+ d.stops.map((s,j)=>`<article class="stop"><div class="stop-num">${j+1}</div><div><h3>${s[0]}</h3><p>${s[1]}</p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s[2])}">Abrir no Google Maps ↗</a></div></article>`).join('');
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>render(Number(b.dataset.tab))));
+document.querySelectorAll('.pin').forEach(p=>{
+ p.addEventListener('click',()=>render(Number(p.dataset.day)));
+ p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();render(Number(p.dataset.day));}});
+});
+render(0);
+</script>
+</body>
+</html>
